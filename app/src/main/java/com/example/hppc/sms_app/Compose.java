@@ -1,4 +1,4 @@
-package com.example.hppc.app_buyhatke;
+package com.example.hppc.sms_app;
 
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -83,12 +83,12 @@ public class Compose extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             ActivityCompat.requestPermissions(Compose.this,
-                                    new String[]{com.example.hppc.app_buyhatke.Manifest.permission.SEND_SMS}, REQUEST_SEND_SMS);
+                                    new String[]{com.example.hppc.sms_app.Manifest.permission.SEND_SMS}, REQUEST_SEND_SMS);
                         }
                     }).show();
         } else {
             ActivityCompat.requestPermissions(Compose.this,
-                    new String[]{com.example.hppc.app_buyhatke.Manifest.permission.READ_SMS}, REQUEST_SEND_SMS);
+                    new String[]{com.example.hppc.sms_app.Manifest.permission.READ_SMS}, REQUEST_SEND_SMS);
         }
     }
 

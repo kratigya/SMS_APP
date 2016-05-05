@@ -1,4 +1,4 @@
-package com.example.hppc.app_buyhatke;
+package com.example.hppc.sms_app;
 
 import android.os.Parcel;
 import android.os.Parcelable;

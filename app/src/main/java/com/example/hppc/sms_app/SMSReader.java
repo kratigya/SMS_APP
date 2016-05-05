@@ -1,4 +1,4 @@
-package com.example.hppc.app_buyhatke;
+package com.example.hppc.sms_app;
 
 import android.content.ContentResolver;
 import android.content.Context;

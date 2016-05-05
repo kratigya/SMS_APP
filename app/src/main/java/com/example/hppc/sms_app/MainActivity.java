@@ -1,4 +1,4 @@
-package com.example.hppc.app_buyhatke;
+package com.example.hppc.sms_app;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -24,7 +24,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
@@ -84,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
     public void permissionCheck() {
 
         if (ContextCompat.checkSelfPermission(MainActivity.this,
-                com.example.hppc.app_buyhatke.Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED) {
+                com.example.hppc.sms_app.Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED) {
             requestSMSPermission();
         } else {
             reader.ReadInbox(MainActivity.this);
@@ -94,19 +93,19 @@ public class MainActivity extends AppCompatActivity {
     private void requestSMSPermission() {
 
         if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this,
-                com.example.hppc.app_buyhatke.Manifest.permission.READ_SMS)) {
+                com.example.hppc.sms_app.Manifest.permission.READ_SMS)) {
 
             Snackbar.make(mlayout, "Permision to read SMS is required", Snackbar.LENGTH_INDEFINITE)
                     .setAction("OK", new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             ActivityCompat.requestPermissions(MainActivity.this,
-                                    new String[]{com.example.hppc.app_buyhatke.Manifest.permission.READ_SMS}, REQUEST_SMS);
+                                    new String[]{com.example.hppc.sms_app.Manifest.permission.READ_SMS}, REQUEST_SMS);
                         }
                     }).show();
         } else {
             ActivityCompat.requestPermissions(MainActivity.this,
-                    new String[]{com.example.hppc.app_buyhatke.Manifest.permission.READ_SMS}, REQUEST_SMS);
+                    new String[]{com.example.hppc.sms_app.Manifest.permission.READ_SMS}, REQUEST_SMS);
         }
     }
 

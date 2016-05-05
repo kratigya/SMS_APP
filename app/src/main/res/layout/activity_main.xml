@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#c3dbef"
     android:fitsSystemWindows="true"
-    tools:context="com.example.hppc.app_buyhatke.MainActivity">
+    tools:context="com.example.hppc.sms_app.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

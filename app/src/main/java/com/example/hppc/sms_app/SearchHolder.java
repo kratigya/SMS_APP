@@ -1,21 +1,21 @@
-package com.example.hppc.app_buyhatke;
+package com.example.hppc.sms_app;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
 /**
- * Created by hppc on 30-Apr-16.
+ * Created by hppc on 04-May-16.
  */
-public class MyViewHolder extends RecyclerView.ViewHolder {
+public class SearchHolder extends RecyclerView.ViewHolder {
 
     private TextView sender, body, date;
 
-    public MyViewHolder(View itemView) {
+    public SearchHolder(View itemView) {
         super(itemView);
-        sender = (TextView) itemView.findViewById(R.id.sender);
-        body = (TextView) itemView.findViewById(R.id.body);
-        date = (TextView) itemView.findViewById(R.id.date);
+        sender = (TextView) itemView.findViewById(R.id.sender1);
+        body = (TextView) itemView.findViewById(R.id.body1);
+        date = (TextView) itemView.findViewById(R.id.date1);
     }
 
     public TextView getBody() {
