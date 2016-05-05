@@ -34,3 +34,7 @@ You can compose messages and also perform search operation through all your mess
   info about each message
 * [Message Thread] (https://github.com/kratigya0705/App_BuyHatke/blob/master/app/src/main/java/com/example/hppc/app_buyhatke/MessageThread.java) 
 grouped messages on basis of sender
+
+### Libraries
+* Recycler View
+* Card View
