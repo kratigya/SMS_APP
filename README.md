@@ -1,4 +1,4 @@
-# App_BuyHatke
+# SMS App
 
 This is a SMS app which displays all the messages received by you even those received by you before the app installs.
 You can compose messages and also perform search operation through all your messages.
