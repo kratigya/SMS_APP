@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">App_BuyHatke</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_compose">Compose</string>
+    <string name="title_activity_display">Display</string>
+    <string name="title_activity_search">Search</string>
+    <string name="title_activity_search_result">SearchResult</string>
+</resources>
