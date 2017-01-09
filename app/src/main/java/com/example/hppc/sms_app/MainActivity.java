@@ -26,12 +26,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
+    private static final int REQUEST_SMS = 0;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private SwipeRefreshLayout mSwipeRefresh;
     private View mlayout;
-    private static final int REQUEST_SMS = 0;
     private TextView mErr;
     private ArrayList<MessageThread> msgList = new ArrayList<MessageThread>();
     private HashMap<String, ArrayList<Message>> hm = new HashMap<String, ArrayList<Message>>();
@@ -71,13 +71,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent cmp = new Intent(MainActivity.this, Compose.class);
-                startActivity(cmp);
-            }
-        });
+        if (fab != null) {
+            fab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent cmp = new Intent(MainActivity.this, Compose.class);
+                    startActivity(cmp);
+                }
+            });
+        }
     }
 
     public void permissionCheck() {
@@ -117,10 +119,11 @@ public class MainActivity extends AppCompatActivity {
                     reader.ReadInbox(MainActivity.this);
                 } else {
                     mErr = (TextView) findViewById(R.id.error);
-                    mErr.setText("No Message To Display");
+                    if (mErr != null) {
+                        mErr.setText("No Message To Display");
+                    }
                 }
             }
-            return;
         }
     }
 
@@ -153,7 +156,6 @@ public class MainActivity extends AppCompatActivity {
             searchButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    int flag = 0;
                     str = edt.getText().toString().toLowerCase();
                     if (hm.containsKey(str)) {
 

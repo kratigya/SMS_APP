@@ -17,6 +17,19 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     ArrayList<MessageThread> smsList;
     Context context;
+    View.OnClickListener clickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+            MyViewHolder mvh = (MyViewHolder) v.getTag();
+            int position = mvh.getAdapterPosition();
+
+            Intent intent = new Intent(context, Display.class);
+            intent.putParcelableArrayListExtra("Message", (ArrayList<? extends Parcelable>) smsList.get(position).getMs());
+            context.startActivity(intent);
+        }
+    };
+
     public MyAdapter(ArrayList<MessageThread> obj, Context context) {
         this.smsList = obj;
         this.context = context;
@@ -55,19 +68,6 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         vh.getBody().setTag(vh);
         vh.getSender().setTag(vh);
     }
-
-    View.OnClickListener clickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-
-            MyViewHolder mvh = (MyViewHolder) v.getTag();
-            int position = mvh.getAdapterPosition();
-
-            Intent intent = new Intent(context,Display.class);
-            intent.putParcelableArrayListExtra("Message", (ArrayList<? extends Parcelable>) smsList.get(position).getMs());
-            context.startActivity(intent);
-        }
-    };
 
     @Override
     public int getItemCount() {
